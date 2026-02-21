@@ -1,77 +1,79 @@
 import React from 'react';
 import TeamMemberCard from './TeamMemberCard';
 
-const TeamGrid: React.FC = () => {
-  const teamMembers = [
-    {
-      name: 'Rafael Silva',
-      role: 'Desenvolvedor Front-end',
-      description: 'Especialista em desenvolvimento front-end com uma base sólida em design, gerenciamento de banco de dados e programação em C#. Combina criatividade com conhecimento técnico para criar interfaces excepcionais e experiências de usuário memoráveis.',
-      skills: [
-        { name: 'Front-end Development', level: 'intermediário' as const },
-        { name: 'Design', level: 'básico' as const },
-        { name: 'Banco de Dados', level: 'avançado' as const },
-        { name: 'C#', level: 'intermediário' as const },
-        { name: 'HTML/CSS', level: 'intermediário' as const },
-      ]
-    },
-    {
-      name: 'Erik Zabel',
-      role: 'Desenvolvedor Python',
-      description: 'Desenvolvedor Python com conhecimento intermediário/básico, focado em criar soluções eficientes e escaláveis. Sempre em busca de aprimorar suas habilidades e explorar novas tecnologias no ecossistema Python.',
-      skills: [
-        { name: 'Python', level: 'intermediário' as const },
-        { name: 'Backend Development', level: 'básico' as const },
-        { name: 'Data Analysis', level: 'básico' as const },
-        { name: 'Automation', level: 'intermediário' as const },
-      ]
-    },
-    {
-      name: 'Keven Wendell',
-      role: 'Desenvolvedor em Front-end',
-      description: 'Desenvolvedor versátil com conhecimentos em Python e linguagem C, especializado em front-end com JavaScript, HTML e CSS. Atualmente expandindo habilidades em React e PHP para se tornar um desenvolvedor full-stack completo.',
-      skills: [
-        { name: 'Python', level: 'básico' as const },
-        { name: 'C Language', level: 'básico' as const },
-        { name: 'JavaScript', level: 'intermediário' as const },
-       { name: 'Front-end Development', level: 'intermediário' as const },
-        { name: 'React', level: 'básico/em aprendizado' as const },
-        { name: 'PHP', level: 'básico/em aprendizado' as const },
-        { name: 'Java', level: 'básico/em aprendizado' as const }
-      ],
-      isMe: true
-    }
-  ];
+// Dados dos membros (substitua pelos reais)
+const teamMembers = [
+  {
+    name: 'Keven Wendell',
+    role: 'Front-end Developer',
+    skills: [
+      { name: 'React', level: 'básico/intermediário' },
+      { name: 'TypeScript', level: 'Básico/Intermediário' },
+      { name: 'JavaScript', level: 'intermediário' },
+      { name: 'React', level: 'Básico/Intermediário' },
+      { name: 'PHP', level: 'Básico' },
+      { name: 'Java', level: 'Básico/em aprendizado' },
+      { name: 'Python', level: 'Básico' },
+      { name: 'C language', level: 'Básico' },
+      { name: 'Node', level: 'Básico/em aprendizado'}
 
+    ],
+    description: 'Desenvolvedor versátil com conhecimentos em Python e linguagem C, especializado em front-end com JavaScript, HTML e CSS. Atualmente expandindo habilidades em React e PHP para se tornar um desenvolvedor full-stack completo.',
+    github: 'https://github.com/Keven-W',
+    linkedin: 'https://www.linkedin.com/in/kevenw/',
+    portfolio: 'https://keven-w.github.io/Keven-portf-lio/',
+    isMe: true
+  },
+  {
+    name: 'Erik Zabel',
+    role: 'Python Developer',
+    skills: [
+      { name: 'Python', level: 'Básico/Intermediário' },
+      { name: 'Backend Development', level: 'Básico' },
+      { name: 'Front-End Development', level: 'Básico/Intermediário' },
+      { name: 'Automation', level: 'Básico/Intermediário' }
+    ],
+    description: 'Desenvolvedor Python com conhecimento intermediário/básico, focado em criar soluções eficientes e escaláveis. Sempre em busca de aprimorar suas habilidades e explorar novas tecnologias no ecossistema Python.',
+    github: 'https://github.com/ErillZabell',
+    linkedin: 'https://www.linkedin.com/in/erik-zabel-ribeiro-66a279358/',
+    // portfolio não tem, então não será exibido
+    isMe: false
+  },
+  {
+    name: 'Rafael Silva N.',
+    role: 'Front-end developer',
+    skills: [
+      { name: 'Banco de Dados', level: 'avançado' },
+      { name: 'Front-end Development', level: 'intermediário' },
+      { name: 'Backend Development', level: 'Básico/Intermediário' },
+      { name: 'C#', level: 'intermediário' },
+      { name: 'Design', level: 'Básico' }
+    ],
+    description: 'Especialista em desenvolvimento front-end com uma base sólida em design, gerenciamento de banco de dados e programação em C#. Combina criatividade com conhecimento técnico para criar interfaces excepcionais e experiências de usuário memoráveis.',
+     //github ainda será criado
+    linkedin: 'https://www.linkedin.com/in/rafael-silva-neves-1785692b4/',
+      //portfólio em falta
+    isMe: false
+  }
+];
+
+const TeamGrid: React.FC = () => {
   return (
-    <section className="relative max-w-7xl mx-auto px-6 py-16">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white mb-4">
-          Nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Equipe</span>
-        </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Cada membro traz suas habilidades únicas para criar soluções extraordinárias
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="animate-fade-in-up"
-            style={{ animationDelay: `${index * 200}ms` }}
-          >
-            <TeamMemberCard
-              name={member.name}
-              role={member.role}
-              skills={member.skills}
-              description={member.description}
-              isMe={member.isMe}
-            />
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+      {teamMembers.map((member, index) => (
+        <TeamMemberCard
+          key={index}
+          name={member.name}
+          role={member.role}
+          skills={member.skills}
+          description={member.description}
+          github={member.github}
+          linkedin={member.linkedin}
+          portfolio={member.portfolio}
+          isMe={member.isMe}
+        />
+      ))}
+    </div>
   );
 };
 
