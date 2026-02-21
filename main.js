@@ -4,6 +4,8 @@ const navMenu = document.getElementById('nav-menu');
 const ctaButton = document.getElementById('cta-button');
 const testimonialsSlider = document.getElementById('testimonials-slider');
 
+
+
 // Estado da aplicação
 let currentTestimonial = 0;
 const testimonials = document.querySelectorAll('.testimonial-card');
