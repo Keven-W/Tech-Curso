@@ -60,6 +60,12 @@ O projeto será evoluído para uma estrutura mais próxima de um ambiente real d
 
 ---
 
+## 👨‍💻 Link para visualizar a página
+
+https://keven-w.github.io/Tech-Curso/
+
+---
+
 ## 👨‍💻 Desenvolvedores
 
 * Rafael Silva
